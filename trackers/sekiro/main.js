@@ -4,13 +4,13 @@ STATE = new Map();
 for (let item of icons) {
 	// Set initial state to be inactive.
 	STATE.set(item, false); 
-	item.style.opacity = "0.3";
+	item.style.opacity = "0.5";
 }
 
 for (let item of icons) {
 	item.onclick = function() {
 		if (STATE.get(item)) {
-			item.style.opacity = "0.3";
+			item.style.opacity = "0.5";
 		} else {
 			item.style.opacity = "1.0";
 		}
