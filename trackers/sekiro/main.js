@@ -58,8 +58,4 @@ for (let item of icons) {
 	}
 }
 
-function key_listen(e, look) {
-	console.log("Hello");
-}
 
-document.onkeypress = function() { console.log("What"); }
