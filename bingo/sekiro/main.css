@@ -1,0 +1,26 @@
+body {
+	color: white;
+	background-color: black;
+}
+
+#bingo-table {
+
+}
+
+.active {
+	background-color: green;
+}
+
+.inactive {
+	background-color: black;
+}
+
+table, td, tr {
+	border: 1px solid white;
+	text-align: center;
+}
+
+td {
+	width: 100px;
+	height: 100px;
+}

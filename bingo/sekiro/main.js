@@ -1,32 +1,8 @@
-class Select {
-	constructor(items) {
-		this.items = items;
-	}
-}
-
-class Range {
-	constructor(min, max) {
-		this.min = min;
-		this.max = max;
-	}
-}
-
-function S(items) { return new Select(items); }
-function R(min, max) { return new Range(min, max); }
-
-class Option {
-	constructor(desc) {
-		this.desc = desc;
-		this.options = [...arguments].slice(1);
-		console.log(this.options);
-	}
-}
-
-OPTIONS = [
-	new Option('Kill {0} Ashina Generals', [1, 2, 'all']),
-	new Option('Kill {0} Shichimen Warriors' [1, 2, 'all']),
-	new Option('Kill {0} Headless', [1, 2 'all']),
-	new Option('Find {0}', [
+const OPTIONS = [
+	new Option('Kill {0} Ashina Generals', S([1, 2, 'all'])),
+	new Option('Kill {0} Shichimen Warriors', S([1, 2, 'all'])),
+	new Option('Kill {0} Headless', S([1, 2, 'all'])),
+	new Option('Find {0}', S([
 		'Shuriken',
 		'Flame Vent',
 		'Firecrackers',
@@ -37,20 +13,59 @@ OPTIONS = [
 		'Loaded Umbrella',
 		'Divine Abduction',
 		'Finger Whistle'
-	]),
-	new Option('Find {0}', ['Puppeteer', 'Bloodsmoke', 'Bestowal']),
-	new Option('Collect {0} Prayer necklaces', [5, 6, 7, 8, 9, 10]),
-	new Option('Collect {0} gourd seeds', [5, 6, 7, 8, 9]),
-	new Option('Do not except {0} Attack Power', [1, 2, 3, 4, 5]),
+	])),
+	new Option('Find {0}', S(['Puppeteer', 'Bloodsmoke', 'Bestowal'])),
+	new Option('Collect {0} Prayer necklaces', S([5, 6, 7, 8, 9, 10])),
+	new Option('Collect {0} gourd seeds', S([5, 6, 7, 8, 9])),
+	new Option('Do not exceed {0} Attack Power', S([1, 2, 3, 4, 5])),
 	new Option('Collect both Serpent Viscera'),
 	//new Option('Learn the {0} skill', []),
-	new Option('Find {0} ', [
+	new Option('Find {0} ', S([
 		'Dragon Tally Board',
 		'Water of the Palace',
-	]),
-	//new Option('Collect the {0} tool upgrade', []),
+		'Rice for Kuro'
+	])),
 	new Option('Possess {0} sen at some point', R(5000, 15000)),
 	new Option('Find {0}', S(['Purple Gourd', 'Green Gourd', 'Red Gourd'])),
 	new Option('Collect {0} carp scales', R(5, 20)),
-	new Option('Ring (and keep) the Demon Bell by your second boss.')
+	new Option('Ring (and keep) the Demon Bell by your second boss.'),
+	new Option('Collect the {0} upgrade', S([
+		'Lazulite Axe',
+		'Sparking Axe',
+		'Spring-load Axe',
+		'Phantom Kunai',
+		'Sen Throw',
+		'Gouging Top',
+		'Lazulite Shuriken',
+		'Spinning Shuriken',
+		'Spiral Spear',
+		'Leaping Flame',
+		'Loaded Spear Thrust Type',
+		'Loaded Spear Cleave Type',
+		"Phoenix's Lilac Umbrella",
+		"Suzaku's Lotus Umbrella",
+		'Loaded Umbrella - Magnet',
+		"Okinaga's Flame Vent",
+		'Lazulite Sacred Flame',
+		'Spring-load Flame Vent',
+		'Long Spark',
+		'Sprig-load Firecracker',
+		'Purple Fume Spark',
+		'Lazulite Sabimaru',
+		'Piercing Sabimaru',
+		'Improved Sabimaru',
+		'Aged Feather Mist Raven',
+		'Great Feather Mist Raven',
+		'Golden Vortex',
+		'Double Divine Abduction',
+		'Malcontent',
+		'Mountain Echo'
+	]))
 ]
+
+function main() {
+	const bingo = new Bingo(OPTIONS);
+	bingo.generate();
+}
+
+document.addEventListener('DOMContentLoaded', main, false);
