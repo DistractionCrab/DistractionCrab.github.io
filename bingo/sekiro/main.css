@@ -3,9 +3,6 @@ body {
 	background-color: black;
 }
 
-#bingo-table {
-
-}
 
 .active {
 	background-color: green;
@@ -15,9 +12,10 @@ body {
 	background-color: black;
 }
 
-table, td, tr {
-	border: 1px solid white;
+td, tr {
+	border: 2px solid white;
 	text-align: center;
+	font-weight: bold;
 }
 
 td {
