@@ -13,10 +13,9 @@ body {
 }
 
 td, tr {
-	border: 2px solid white;
 	text-align: center;
 	font-weight: bold;
-	opacity: 75%;
+	opacity: 0.75;
 }
 
 td {
