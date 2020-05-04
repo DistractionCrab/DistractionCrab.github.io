@@ -16,6 +16,7 @@ td, tr {
 	border: 2px solid white;
 	text-align: center;
 	font-weight: bold;
+	opacity: 75%;
 }
 
 td {
