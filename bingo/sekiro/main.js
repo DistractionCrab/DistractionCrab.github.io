@@ -1,7 +1,16 @@
 const OPTIONS = [
-	new Option('Kill {0} Ashina Generals', S([1, 2, 'all'])),
-	new Option('Kill {0} Shichimen Warriors', S([1, 2, 'all'])),
-	new Option('Kill {0} Headless', S([1, 2, 'all'])),
+	new Option('Kill {0} Ashina Generals', O([1, 2, 'all'])),
+	new Option('Kill {0} Shichimen Warriors', O([1, 2, 'all'])),
+	new Option('Kill {0} Headless', O([1, 2, 'all'])),
+	new Option('Kill {0} Lone Shadows', O([1, 2, 3, 'all'])),
+	new Option('Obtain {0}', S([
+		'Lotus',
+		'Shelter Stone', 
+		'Aromatic Branch',
+		'Frozen Tears',
+		'Divine Dragon Tears',
+		'Aromatic Flower'
+	])),
 	new Option('Find {0}', S([
 		'Shuriken',
 		'Flame Vent',
@@ -15,9 +24,9 @@ const OPTIONS = [
 		'Finger Whistle'
 	])),
 	new Option('Find {0}', S(['Puppeteer', 'Bloodsmoke', 'Bestowal'])),
-	new Option('Collect {0} Prayer necklaces', S([5, 6, 7, 8, 9, 10])),
-	new Option('Collect {0} gourd seeds', S([5, 6, 7, 8, 9])),
-	new Option('Do not exceed {0} Attack Power', S([1, 2, 3, 4, 5])),
+	new Option('Collect {0} Prayer necklaces', O([5, 6, 7, 8, 9, 10])),
+	new Option('Collect {0} gourd seeds', O([5, 6, 7, 8, 9])),
+	new Option('Do not exceed {0} Attack Power', O([1, 2, 3, 4, 5])),
 	new Option('Collect both Serpent Viscera'),
 	//new Option('Learn the {0} skill', []),
 	new Option('Find {0} ', S([

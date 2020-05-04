@@ -16,6 +16,13 @@ class Select {
 	}
 }
 
+class SelectOne extends Select {
+	count() {
+		return 1;
+	}
+
+}
+
 class Range {
 	constructor(min, max) {
 		this.min = min;
@@ -34,6 +41,7 @@ class Range {
 }
 
 function S(items) { return new Select(items); }
+function O(items) { return new SelectOne(items); }
 function R(min, max) { return new Range(min, max); }
 
 class Option {
