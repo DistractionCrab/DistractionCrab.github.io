@@ -3,6 +3,11 @@ const OPTIONS = [
 	new Option('Kill {0} Shichimen Warriors', O([1, 2, 'all'])),
 	new Option('Kill {0} Headless', O([1, 2, 'all'])),
 	new Option('Kill {0} Lone Shadows', O([1, 2, 3, 'all'])),
+	new Option('Defeat {0}', S([
+		'Demon of Hatred',
+		'Father Owl',
+		'Sword Saint',
+	])),
 	new Option('Obtain {0}', S([
 		'Lotus',
 		'Shelter Stone', 

@@ -76,6 +76,25 @@ function randInt(i) {
 	return Math.floor(Math.random() * i);
 }
 
+class CellState {
+	constructor() {
+		this.state = 0;
+		this.max_state = 3;
+		this.colors = [
+			'black',
+			'green',
+			'red'
+		];
+	}
+
+	increment() {
+		this.state = (this.state + 1) % this.max_state;
+	}
+
+	get_color() {
+		return this.colors[this.state];
+	}
+}
 
 class Bingo {
 	constructor(options) {
@@ -96,9 +115,13 @@ class Bingo {
 				while (!filled) {
 					const c = randInt(OPTIONS.length);
 					if (counts[c] < OPTIONS[c].count()) {
-						counts[c] += 1;
-						col.innerHTML = OPTIONS[c].select();
-						filled = true;
+						var opt = OPTIONS[c].select();
+						if (!choices.includes(opt)) {
+							counts[c] += 1;
+							choices.push(opt);
+							col.innerHTML = opt;
+							filled = true;
+						}
 					}
 				}
 			}
@@ -112,8 +135,13 @@ class Bingo {
 			const row = table.rows[i];
 			for (var k = 0; k < 5; ++k) {
 				const col = row.cells[k];
+				let state = new CellState();
 				col.onclick = function(event) {
 					const elem = event.target;
+					state.increment();
+					elem.style.backgroundColor = state.get_color();
+
+					/*
 					if (elem.className.includes(INACTIVE)) {
 						const newClass = elem.className.replace(INACTIVE, ACTIVE);
 						elem.className = newClass;
@@ -126,6 +154,7 @@ class Bingo {
 						elem.className += ' ' + ACTIVE;
 						elem.style.backgroundColor = 'green';
 					}
+					*/
 				};
 			}
 		}	
