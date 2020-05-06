@@ -1,8 +1,18 @@
 const OPTIONS = [
+	new Option('Find {0}', S([
+		"Gokan's Spiritfall",
+		"Yashariku's Spiritfall",
+		"Ako's Spiritfall",
+		"Gachiin's Spiritfall",
+		"Ungo's Spiritfall"
+	])),
+	new Option('Receive all three a hag.'),
+	new Option("Complete Kotaro's questline."),
 	new Option('Kill {0} Ashina Generals', O([1, 2, 'all'])),
 	new Option('Kill {0} Shichimen Warriors', O([1, 2, 'all'])),
 	new Option('Kill {0} Headless', O([1, 2, 'all'])),
-	new Option('Kill {0} Lone Shadows', O([1, 2, 3, 'all'])),
+	new Option('Kill {0} Lone Shadows', O([1, 2, 3, 4, 'all'])),
+	new Option('Kill {0} Centipedes', O([1, 'all'])),
 	new Option('Defeat {0}', S([
 		'Demon of Hatred',
 		'Father Owl',
@@ -37,12 +47,15 @@ const OPTIONS = [
 	new Option('Find {0} ', S([
 		'Dragon Tally Board',
 		'Water of the Palace',
-		'Rice for Kuro'
+		'Rice for Kuro',
+		'Dancing Dragon Mask',
+		'Great White Whisker',
+		'Red Carp Eyes',
 	])),
 	new Option('Possess {0} sen at some point', R(5000, 15000)),
 	new Option('Find {0}', S(['Purple Gourd', 'Green Gourd', 'Red Gourd'])),
 	new Option('Collect {0} carp scales', R(5, 20)),
-	new Option('Ring (and keep) the Demon Bell by your second boss.'),
+	new Option('Have the Demon Bell Debuff for {0} bosses.', O([1, 2, 3])),
 	new Option('Collect the {0} upgrade', S([
 		'Lazulite Axe',
 		'Sparking Axe',

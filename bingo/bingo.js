@@ -140,21 +140,6 @@ class Bingo {
 					const elem = event.target;
 					state.increment();
 					elem.style.backgroundColor = state.get_color();
-
-					/*
-					if (elem.className.includes(INACTIVE)) {
-						const newClass = elem.className.replace(INACTIVE, ACTIVE);
-						elem.className = newClass;
-						elem.style.backgroundColor = 'green';
-					} else if (elem.className.includes(ACTIVE)){
-						const newClass = elem.className.replace(ACTIVE, INACTIVE);
-						elem.className = newClass;
-						elem.style.backgroundColor = 'black';
-					} else {
-						elem.className += ' ' + ACTIVE;
-						elem.style.backgroundColor = 'green';
-					}
-					*/
 				};
 			}
 		}	
