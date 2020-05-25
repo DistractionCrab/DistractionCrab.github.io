@@ -20,7 +20,16 @@ class SelectOne extends Select {
 	count() {
 		return 1;
 	}
+}
 
+class SelectN extends Select {
+	constructor(n, items) {
+		super(items);
+		this.n = n;
+	}
+	count() {
+		return n;
+	}
 }
 
 class Range {
@@ -42,6 +51,7 @@ class Range {
 
 function S(items) { return new Select(items); }
 function O(items) { return new SelectOne(items); }
+function N(n, items) { return new SelectN(n, items); }
 function R(min, max) { return new Range(min, max); }
 
 class Option {
