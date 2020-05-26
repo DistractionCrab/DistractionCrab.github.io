@@ -28,7 +28,7 @@ class SelectN extends Select {
 		this.n = n;
 	}
 	count() {
-		return n;
+		return this.n;
 	}
 }
 
