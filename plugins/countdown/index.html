@@ -1,55 +1,32 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		body {
-			color: white;
-			background-color: black;
-		}
-		p {
-			text-align: center;
-			font-size: 60px;
-			margin-top: 0px;
-		}
-	</style>
+	<title>Countdown Generator</title>
+	<link rel="stylesheet" type="text/css" href="../../shared/index.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src='index.js'></script>
 </head>
 <body>
-	<p id="demo"></p>
-	<script>
-		// Set the date we're counting down to
-		//var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-		//var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
-		var now = new Date();
-		var countDownDate = new Date(now);
-		countDownDate.setMinutes(now.getMinutes() + 5);
+	<h1>
+		<table class='center'>
+			<tr>
+				<td><img src="../../images/DarkEmberCrabBorderless.png" height='50px' width='50px'></td>
+				<td>Countdown Generator</td>
+			</tr>
+		</table>
+	</h1>
+	<p class='center'>
+		To generate a countdown file, type the number of each unit of time in the boxes:
+		<table>
+			<tr>
+				<td>Minutes: </td><td><input type='text' id='minutes_box'></td>
+			</tr>
+		</table>
+		<button onclick="generate_timer();">Create Timer</button>
+	</p>
 
-		// Update the count down every 1 second
-		var x = setInterval(function() {			  
-			// Find the distance between now and the count down date
-			var now = new Date().getTime();
-			var distance = countDownDate - now;
-
-			// Time calculations for days, hours, minutes and seconds
-			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-			
-			if (minutes > 0) {
-				document.getElementById("demo").innerHTML 
-				= minutes + "m " + seconds + "s ";	
-			} else {
-				document.getElementById("demo").innerHTML = seconds + "s ";
-			}
-
-			// Output the result in an element with id="demo"
-			
-			    
-			// If the count down is over, write some text 
-			if (distance < 0) {
-				clearInterval(x);
-				document.getElementById("demo").innerHTML = "Starting Soon!";
-			}
-		}, 250);
-	</script>
+	<textarea id='download_area'>
+		
+	</textarea>
 </body>
 </html>
