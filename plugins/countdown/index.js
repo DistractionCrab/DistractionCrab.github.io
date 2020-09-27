@@ -6,7 +6,7 @@ const TEMPLATE = `
 	<style>
 		body {
 			color: white;
-			background-color: black;
+			background-color: rgba(0, 0, 0, 0);
 		}
 		p {
 			text-align: center;
