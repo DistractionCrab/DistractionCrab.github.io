@@ -74,8 +74,12 @@ class Option {
 
 	select() {
 		if (this.options.length > 0) {
-			// TODO: Need to implement multiple selects.
-			return this.desc.replace('{0}', this.options[0].select())
+			var str = this.desc;
+			for (var i = 0; i < this.options.length; ++i) {
+				str = str.replace(`{${i}}`, this.options[i].select());
+			}
+
+			return str;
 		} else {
 			return this.desc;
 		}
