@@ -1,0 +1,73 @@
+body {
+	background:  url(images/main-bg.jpg) no-repeat center center fixed;
+	/*background-size: contain; Causes lag */
+	background-color: black;
+	color: white;
+	will-change: transform;
+}
+
+#title-image {
+	max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#info-panels {
+	width: 100%;
+	text-align: center;
+}
+
+.headers {
+	text-align: center;
+}
+
+#title {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Franklin Gothic Bold;
+}
+
+.info-box {
+	max-width: 50%;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#info-table {
+	text-align: center;
+	max-width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a:link {
+  color: #33EAFF;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #33EAFF;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.game-link {
+	width: 100%;
+}
